@@ -7,6 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { AlertModule } from 'ngx-bootstrap';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +20,8 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
+    AlertModule.forRoot(),
+    CarouselModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],

@@ -47,3 +47,40 @@ ng g c contact
 ng build, will compile code 
 firebaseploy
 >check https://turtlewash-1.firebaseapp.com
+
+
+>>adding bootstrap
+npm install ngx-bootstrap bootstrap --save
+>>update angular.json, search for style and add two sections
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "src/styles.css"
+            ],
+
+2
+Open src/app/app.module.ts and add:
+import { AlertModule } from 'ngx-bootstrap';
+...
+
+@NgModule({
+   ...
+   imports: [AlertModule.forRoot(), ... ],
+   ...
+})
+
+3
+Open angular.json and insert a new entry into the styles array:
+      "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.css",
+      ],
+
+
+4
+Open src/app/app.component.html and add:
+  <alert type="success">hello</alert>
+
+ng build
+firebase deploy 
+git push
