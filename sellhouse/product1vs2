@@ -1,0 +1,36 @@
+Generates and/or modifies files based on a schematic.
+usage: ng generate <schematic> [options]
+
+arguments:
+  schematic
+    The schematic or collection:schematic to generate.
+
+options:
+  --defaults 
+    When true, disables interactive input prompts for options with a default.
+  --dry-run (-d)
+    When true, run through and report activity without writing out results.
+  --force (-f)
+    When true, force overwriting of existing files.
+  --help 
+    Shows a help message for this command in the console.
+  --interactive 
+    When false, disables interactive input prompts.
+
+Available Schematics:
+  Collection "@schematics/angular" (default):
+    appShell
+    application
+    class
+    component
+    directive
+    enum
+    guard
+    interface
+    library
+    module
+    pipe
+    service
+    serviceWorker
+    universal
+

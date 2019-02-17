@@ -1,6 +1,5 @@
 # sellhouse
 
-
 mkdir sellhouse
 cd sellhouse
 firebase init, select hosting, singlepage app
@@ -84,3 +83,26 @@ Open src/app/app.component.html and add:
 ng build
 firebase deploy 
 git push
+
+>creating reusable content using partials 
+ng g c form, ng g c ENTERNAME
+>form
+>process123
+>product1vs2
+>customertype123
+
+>processNextSteps10
+>productAvsB
+>customerType123
+>customervideo1
+
+>add bootstrap modal
+/app.module.ts
+import { ModalModule } from 'ngx-bootstrap/modal';
+    ModalModule.forRoot(),
+>see html in productvideo1learnmore
+
+>test :4200, then deploy 
+ng build
+firebase serve
+>test :5000

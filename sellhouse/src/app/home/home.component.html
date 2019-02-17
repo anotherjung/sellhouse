@@ -1,17 +1,15 @@
 <div class="container-fluid">
-  <alert type="success"> {{title}} works!</alert>
+  <!-- <alert type="success"> {{title}} works!</alert> -->
 
 <div class="container-fluid">
-    <div class="jumbotron">
-        <h2 class="display-5">Aloha friend :)</h2>
-        <p class="lead">Thanks again for your interest.  I'm available for website and advertising projects, and investment opportunities.  </p>
-        <hr class="my-4">
-        <p>You can find my <a class="badge badge-secondary" [routerLink]="['../portfolio']" role="button">Portfolio</a> here, my <a class="badge badge-secondary" [routerLink]="['../resume']" role="button">Resume</a> here, and <a class="badge badge-secondary" [routerLink]="['../contact']" role="button">Contact</a> me here.</p>
-        <!-- <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
-        <alert type="success"> hello bootstrap</alert> -->
-      </div>
+
+<!-- start productvideo1learnmore -->
+<app-productvideo1learnmore></app-productvideo1learnmore>
+
+
+  <!-- start form  -->
+<app-form></app-form>
+      <!-- start homeowner image  -->
       <div class="jumbotron row">
           <carousel>
               <slide>
@@ -31,9 +29,12 @@
                   </slide>
             </carousel>
       </div>
+    
+
+
   <h1></h1>
 </div>
 <p class="lead">
-    <a class="btn btn-primary btn-lg ml-2 mt-2" [routerLink]="['../about']" role="button">About</a>
+    <a class="btn btn-primary btn-lg ml-2 mt-2" [routerLink]="['../about']" role="button">How it works</a>
   </p>
 </div>
