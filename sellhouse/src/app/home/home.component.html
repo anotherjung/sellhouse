@@ -1,3 +1,39 @@
-<p>
-  home works!
-</p>
+<div class="container-fluid">
+  <alert type="success"> {{title}} works!</alert>
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h2 class="display-5">Aloha friend :)</h2>
+        <p class="lead">Thanks again for your interest.  I'm available for website and advertising projects, and investment opportunities.  </p>
+        <hr class="my-4">
+        <p>You can find my <a class="badge badge-secondary" [routerLink]="['../portfolio']" role="button">Portfolio</a> here, my <a class="badge badge-secondary" [routerLink]="['../resume']" role="button">Resume</a> here, and <a class="badge badge-secondary" [routerLink]="['../contact']" role="button">Contact</a> me here.</p>
+        <!-- <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+        <alert type="success"> hello bootstrap</alert> -->
+      </div>
+      <div class="jumbotron row">
+          <carousel>
+              <slide>
+                <img src="../../assets/photos/heavenlysnowed.jpg" alt="second slide" style="display: block; width: 100%;">
+              </slide>
+              <slide>
+                  <img src="../../assets/photos/snowboardinghandstand.jpg" alt="first slide" style="display: block; width: 100%;">
+                </slide>
+              <slide>
+                <img src="../../assets/photos/bigsurcoast.jpg" alt="third slide" style="display: block; width: 100%;">
+              </slide>
+              <slide>
+                  <img src="../../assets/photos/ferryny.jpg" alt="third slide" style="display: block; width: 100%;">
+                </slide>
+                <slide>
+                    <img src="../../assets/photos/hawaiihikesunset.jpg" alt="third slide" style="display: block; width: 100%;">
+                  </slide>
+            </carousel>
+      </div>
+  <h1></h1>
+</div>
+<p class="lead">
+    <a class="btn btn-primary btn-lg ml-2 mt-2" [routerLink]="['../about']" role="button">About</a>
+  </p>
+</div>
