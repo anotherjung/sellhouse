@@ -18,6 +18,7 @@ import { Customertype123Component } from './customertype123/customertype123.comp
 import { Customervideo1Component } from './customervideo1/customervideo1.component';
 import { Productvideo1learnmoreComponent } from './productvideo1learnmore/productvideo1learnmore.component';
 
+import { DevComponent } from './dev/dev.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { Productvideo1learnmoreComponent } from './productvideo1learnmore/produc
     Customertype123Component,
     Customervideo1Component,
     Productvideo1learnmoreComponent,
+    DevComponent
   ],
   imports: [
     BrowserModule,
