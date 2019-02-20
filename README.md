@@ -106,3 +106,19 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 ng build
 firebase serve
 >test :5000
+
+
+# Adding Reactive Forms
+
+>form1
+```javascript
+import { ReactiveFormsModule } from '@angular/forms'; //form1
+
+@NgModule({
+  imports: [
+    // other imports ...
+    ReactiveFormsModule, //form1
+  ],
+})
+export class AppModule { }
+```
