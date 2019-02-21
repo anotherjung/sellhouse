@@ -108,17 +108,121 @@ firebase serve
 >test :5000
 
 
-# Adding Reactive Forms
 
->form1
-```javascript
-import { ReactiveFormsModule } from '@angular/forms'; //form1
+# adding firestore 
+npm install angularfire2 firebase --save
+npm audit fix --force
+
+>update src/environments, two files
+,,,
+  //firebase1
+  ,firebase: {
+    grab api keys from firebase console
+  }
+  //ends
+,,,
+
+>update app.module.ts
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
+import { AlertModule } from 'ngx-bootstrap';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+import { FormComponent } from './form/form.component';
+import { Process123Component } from './process123/process123.component';
+import { Product1vs2Component } from './product1vs2/product1vs2.component';
+import { Customertype123Component } from './customertype123/customertype123.component';
+import { Customervideo1Component } from './customervideo1/customervideo1.component';
+import { Productvideo1learnmoreComponent } from './productvideo1learnmore/productvideo1learnmore.component';
+
+import { DevComponent } from './dev/dev.component';
+
+
+import { AngularFireModule } from 'angularfire2'; //form33firestore
+import { environment } from '../environments/environment'; //form33firestore
+import { AngularFirestoreModule } from 'angularfire2/firestore'; //form33firestore
 
 @NgModule({
-  imports: [
-    // other imports ...
-    ReactiveFormsModule, //form1
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    FormComponent,
+    Process123Component,
+    Product1vs2Component,
+    Customertype123Component,
+    Customervideo1Component,
+    Productvideo1learnmoreComponent,
+    DevComponent
   ],
+  imports: [
+    BrowserModule,
+    AlertModule.forRoot(),
+    CarouselModule.forRoot(),
+    ModalModule.forRoot(),
+    AppRoutingModule
+    ,AngularFireModule.initializeApp(environment.firebase) //form33firestore
+    ,AngularFirestoreModule // imports firebase/firestore, only needed for database features //form33firestore
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 ```
+
+>update name.component.ts
+```
+import { Component, OnInit } from '@angular/core';
+
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-dev',
+  templateUrl: './dev.component.html',
+  styleUrls: ['./dev.component.css']
+})
+export class DevComponent implements OnInit {
+
+  title = 'dev';
+
+  items: Observable<any[]>;
+
+  constructor(db: AngularFirestore) { 
+    this.items = db.collection('items').valueChanges();
+  }
+
+  ngOnInit() {
+    console.log(11,this.title);
+  }
+
+}
+
+```
+
+
+>add collection names items 
+>test by adding html
+```
+  <!-- form11 test -->
+<ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.name}}, {{item.email}}, {{item.message}}
+    </li>
+  </ul>
+  <!-- ends -->
+```
+
+
+

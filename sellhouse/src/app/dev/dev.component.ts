@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-dev',
   templateUrl: './dev.component.html',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevComponent implements OnInit {
 
-  constructor() { }
+  title = 'dev';
+
+  items: Observable<any[]>;
+
+  constructor(db: AngularFirestore) { 
+    this.items = db.collection('items').valueChanges();
+  }
 
   ngOnInit() {
+    console.log(11,this.title);
   }
 
 }

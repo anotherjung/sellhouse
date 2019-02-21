@@ -1,4 +1,12 @@
-<!-- <alert type="success"> {{title}} works!</alert> -->
+<alert type="success"> {{title}} works!</alert>
+
+  <!-- form11 test -->
+  <ul>
+      <li class="text" *ngFor="let item of items | async">
+        {{item.name}}, {{item.email}}, {{item.message}}
+      </li>
+    </ul>
+    <!-- ends -->
 
   <!-- start form  -->
   <div class="jumbotron">

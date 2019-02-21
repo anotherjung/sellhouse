@@ -20,6 +20,11 @@ import { Productvideo1learnmoreComponent } from './productvideo1learnmore/produc
 
 import { DevComponent } from './dev/dev.component';
 
+
+import { AngularFireModule } from 'angularfire2'; //form33firestore
+import { environment } from '../environments/environment'; //form33firestore
+import { AngularFirestoreModule } from 'angularfire2/firestore'; //form33firestore
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +45,8 @@ import { DevComponent } from './dev/dev.component';
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
     AppRoutingModule
+    ,AngularFireModule.initializeApp(environment.firebase) //form33firestore
+    ,AngularFirestoreModule // imports firebase/firestore, only needed for database features //form33firestore
   ],
   providers: [],
   bootstrap: [AppComponent]
